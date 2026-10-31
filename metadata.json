@@ -1,0 +1,6 @@
+{
+  "name": "星勺居命理研究所",
+  "description": "集华夏八字四柱、紫微星盘、西方占星神谕以及现代MBTI十六型性格密码于一堂的中西玄学深度命理研究所。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

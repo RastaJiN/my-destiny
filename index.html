@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星勺居命理研究所</title>
+    <meta name="description" content="集华夏八字四柱、紫微星盘、西方占星神谕以及现代MBTI十六型性格密码于一堂的中西玄学深度命理研究所，融合倪海厦《天纪》知识库体系。" />
+    <meta property="og:title" content="星勺居命理研究所" />
+    <meta property="og:description" content="集华夏八字四柱、紫微星盘、西方占星神谕以及现代MBTI十六型性格密码于一堂的中西玄学深度命理研究所，融合倪海厦《天纪》知识库体系。" />
+    <script>
+      // 拦截并过滤浏览器第三方扩展（如视频嗅探脚本）在 iframe 隔离环境中触发的跨域 SecurityError
+      (function() {
+        function isExtensionOrIframeSecurityError(err, filename) {
+          var msg = (err && (err.message || err.toString())) || '';
+          var fn = filename || (err && err.filename) || '';
+          var stack = (err && err.stack) || '';
+          
+          if (fn.indexOf('chrome-extension://') !== -1 ||
+              fn.indexOf('moz-extension://') !== -1 ||
+              stack.indexOf('chrome-extension://') !== -1 ||
+              stack.indexOf('moz-extension://') !== -1) {
+            return true;
+          }
+          if (msg.indexOf('Blocked a frame with origin') !== -1 ||
+              msg.indexOf('cross-origin frame') !== -1 ||
+              msg.indexOf('Failed to read a named property') !== -1 ||
+              (msg.indexOf('SecurityError') !== -1 && msg.indexOf('Location') !== -1)) {
+            return true;
+          }
+          return false;
+        }
+
+        window.addEventListener('error', function(event) {
+          if (isExtensionOrIframeSecurityError(event.error || event.message, event.filename)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isExtensionOrIframeSecurityError(event.reason)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
